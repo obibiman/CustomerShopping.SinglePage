@@ -274,6 +274,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shopper.DataAccess\Shopper.DataAccess.csproj">
+      <Project>{1dd943a0-f743-4a34-8a61-72638aa64e2b}</Project>
+      <Name>Shopper.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shopper.DataServices\Shopper.DataServices.csproj">
       <Project>{70bc3c54-eb8a-46eb-aeab-6b1d0f97c2a1}</Project>
       <Name>Shopper.DataServices</Name>

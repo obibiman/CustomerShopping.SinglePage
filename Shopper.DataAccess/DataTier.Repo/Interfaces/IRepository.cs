@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
-namespace Shopper.DataAccess.SqlServer.ORM.Interfaces
+namespace Shopper.DataAccess.DataTier.Repo.Interfaces
 {
     public interface IRepository<T> where T : class
     {

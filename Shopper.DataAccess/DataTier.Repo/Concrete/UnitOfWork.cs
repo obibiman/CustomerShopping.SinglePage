@@ -1,9 +1,8 @@
 ﻿using Shopper.DataAccess.Context;
-using Shopper.DataAccess.SqlServer.ORM.Concrete;
-using Shopper.DataAccess.SqlServer.ORM.Interfaces;
+using Shopper.DataAccess.DataTier.Repo.Interfaces;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.ORM.Concrete
+namespace Shopper.DataAccess.DataTier.Repo.Concrete
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.SqlServer.Mapping
+namespace Shopper.DataAccess.Mapping
 {
     public class DepartmentMap : EntityTypeConfiguration<Department>
     {
@@ -13,12 +13,12 @@ namespace Shopper.DataAccess.SqlServer.Mapping
             Property(t => t.DepartmentId)
                 .IsRequired()
                 .HasColumnName("DepartmentId")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnType("INT");
             Property(t => t.DepartmentName)
                 .IsRequired()
                 .HasColumnName("DepartmentName")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
         }
     }

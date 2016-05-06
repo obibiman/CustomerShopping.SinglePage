@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.SqlServer.Mapping
+namespace Shopper.DataAccess.Mapping
 {
     public class ShoppingCartMap : EntityTypeConfiguration<ShoppingCart>
     {
@@ -13,7 +13,7 @@ namespace Shopper.DataAccess.SqlServer.Mapping
             Property(t => t.ShoppingCartId)
                 .IsRequired()
                 .HasColumnName("ShoppingCartId")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnType("INT");
             Property(t => t.PurchaseDate)
                 .IsRequired()

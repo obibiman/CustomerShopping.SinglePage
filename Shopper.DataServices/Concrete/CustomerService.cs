@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Shopper.DataAccess.ORM.Concrete;
+using Shopper.DataAccess.DataTier.Repo.Concrete;
+using Shopper.DataAccess.DataTier.Repo.Interfaces;
 using Shopper.DataServices.Interfaces;
 using Shopper.Domain;
 
@@ -9,9 +10,9 @@ namespace Shopper.DataServices.Concrete
 {
     public class CustomerService : ICustomerService
     {
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CustomerService(UnitOfWork unitOfWork)
+        public CustomerService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

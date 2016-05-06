@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.SqlServer.Mapping
+namespace Shopper.DataAccess.Mapping
 {
     public class CustomerMap : EntityTypeConfiguration<Customer>
     {
@@ -18,18 +13,19 @@ namespace Shopper.DataAccess.SqlServer.Mapping
             Property(t => t.CustomerId)
                 .IsRequired()
                 .HasColumnName("CustomerId")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnType("INT");
             Property(t => t.FirstName)
                 .IsRequired()
                 .HasColumnName("FirstName")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
             Property(t => t.LastName)
                 .IsOptional()
                 .HasColumnName("LastName")
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
+            HasMany(t => t.ShoppingCarts);
         }
     }
 }

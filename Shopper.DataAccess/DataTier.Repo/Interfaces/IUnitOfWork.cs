@@ -1,7 +1,7 @@
 ﻿using System;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.SqlServer.ORM.Interfaces
+namespace Shopper.DataAccess.DataTier.Repo.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

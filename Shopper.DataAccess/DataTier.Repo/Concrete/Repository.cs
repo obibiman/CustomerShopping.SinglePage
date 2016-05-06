@@ -4,8 +4,9 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
+using Shopper.DataAccess.DataTier.Repo.Interfaces;
 
-namespace Shopper.DataAccess.SqlServer.ORM.Interfaces
+namespace Shopper.DataAccess.DataTier.Repo.Concrete
 {
     public class Repository<T> : IRepository<T> where T : class
     {

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using Shopper.Domain;
 
-namespace Shopper.DataAccess.SqlServer.Mapping
+namespace Shopper.DataAccess.Mapping
 {
     public class InventoryMap : EntityTypeConfiguration<Inventory>
     {
@@ -13,27 +13,27 @@ namespace Shopper.DataAccess.SqlServer.Mapping
             Property(t => t.InventoryId)
                 .IsRequired()
                 .HasColumnName("InventoryId")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnType("INT");
             Property(t => t.ItemDescription)
                 .IsRequired()
                 .HasColumnName("ItemDescription")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
             Property(t => t.ItemName)
                 .IsRequired()
                 .HasColumnName("ItemName")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
             Property(t => t.Manufacturer)
                 .IsRequired()
                 .HasColumnName("Manufacturer")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
             Property(t => t.Supplier)
                 .IsRequired()
                 .HasColumnName("Supplier")
-                .HasMaxLength(25)
+                .HasMaxLength(100)
                 .HasColumnType("NVARCHAR");
             Property(t => t.UnitsInStock)
                 .IsRequired()

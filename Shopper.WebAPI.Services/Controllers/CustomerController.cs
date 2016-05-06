@@ -29,7 +29,7 @@ namespace Shopper.WebAPI.Services.Controllers
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Customer, CustomerListModel>());
             var mapper = config.CreateMapper();
 
-            var customers = _customerService.GetAll().AsEnumerable();
+            var customers = _customerService.GetAll();
             var customerListModels = mapper.Map<IEnumerable<Customer>, List<CustomerListModel>>(customers);
             return customerListModels;
         }
